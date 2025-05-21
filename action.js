@@ -93,7 +93,7 @@ function loadProducts() {
             ${product.removable ? `<div class="buy-container"><button class="${product.class2}">Remove</button></div>` : ""}
         </div>
         <a href="products.html?id=${product.id}">
-        <button>See details</button>
+        <button>See details</button></a>
     </div>
 `;
 
