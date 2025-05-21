@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ePlants</title>
+    <link rel="icon" href="Images/logo.jpg">
+    <link rel="stylesheet" href="style_all_pages.css">
+</head>
+<body id="body">
+    <!-- Header -->
+<div id="principal-enter">
+    <!-- Navbar principal -->
+    <nav class="navbar" id="navbar">
+        <ul id="important-ul">
+            <li><button id="ac" class="cart-open nav-button" data-target="shop">SHOP</button></li>
+            <li><button class="cart-open nav-button" data-target="games">GAMES</button></li>
+            <li><button class="cart-open nav-button" data-target="list">LIST</button></li>
+            <li><button class="cart-open nav-button" data-target="contact">CONTACT</button></li>
+            <li><button id="cart-open2" class="functionality cart-open" data-target="cart">CART</button></li>
+            <li><input type="checkbox" id="check" onclick="checkedButton()"></li>
+            <li><label for="check" id="check-container">
+                <div class="circle">
+                    <div class="circle-circle">
+                        <svg class="svg1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                    </svg>
+                    <svg class="svg2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                    </svg>  
+                    </div>   
+                </div>
+            </label></li>
+        </ul>
+    </nav>
+
+    <!-- Navbar responsive -->
+    <nav class="navbar2" id="navbar2">
+        <ul id="dropdown-fix">
+            <li><button id="ac" class="cart-open nav-button" data-target="shop">SHOP</button></li>
+            <li><button class="cart-open functionality" data-target="cart">CART</button></li>
+            <li><button id="position" class="cart-open" onclick="openDropdown()">MENU</button></li>
+        </ul>
+    </nav>
+
+    <div id="inv-navbar"></div>
+
+    <!-- Dropdown Navbar -->
+    <div id="dropdown-navbar">
+        <ul id="drop-black">
+            <li><button class="cart-open nav-button" data-target="games">GAMES</button></li>
+            <li><button class="cart-open nav-button" data-target="list">LIST</button></li>
+            <li><button class="cart-open nav-button" data-target="contact">CONTACT</button></li>  
+            <div id="drop-theme">
+                <p id="theme-mode"> Dark Mode</p>
+                <input type="checkbox" id="check2" style="display:none" onclick="checkedButton2()">
+                <label for="check2" id="check2-container">
+                    <div class="circle-1">
+                    <div class="circle-circle-1">
+                        <svg class="svg1-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="svg2-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    </div>
+                </label>
+                </div>
+
+        </ul>
+    </div>
+
+            <div id="principal-text-container">
+                <p id="principal-text">Lumea plantelor la tine:</p>
+                <div id="principal-text-add">
+                    <span class="role">Acasă</span>
+                    <span class="role">Birou</span>
+                    <span class="role">Grădină</span>
+                    <span class="role">Evenimente</span>
+                    <span class="role">Acasă</span>
+                </div>
+            </div>
+
+        </div> 
+    
+    <main>
+
+       <div id="cart-container">
+        <div id="cart">
+            <div id="title-cart">Cosul tau!<button id="cart-exit">Close</button></div>
+            <div id="cart-added">
+                <!-- Elementele din coș vor fi adăugate aici dinamic -->
+            </div>
+            <div id="total-sum">
+                <p>Total: <span id="total-amount">0 lei</span></p>
+            </div>
+        </div>
+        </div>
+
+
+            <div id="STOPDISPLAYFLEXING">
+                <section id="shop" class="hidden">
+                <!--Section 1-->
+                <div class="principal-important-section">  
+                    <div id="principalsection1" class="principalsection">    
+                        <div class="principal-title"><p>Plantele Noastre:</p></div>
+                        <div id="container-align-searching">
+                            <div id="searching-bar">
+                                <input type="text" id="search-bar" placeholder="Search...">
+                            </div>
+                            <!-- Buton pentru filtrare -->
+                            <button id="price-search">Adjust Price</button>
+            
+                            <!-- Meniul dropdown (moved outside the button) -->
+                            <div id="container-price-search">
+                                <label><input type="radio" id="radio1" class="radio-radio" name="radio-price"> Low - High</label><br>
+                                <label><input type="radio" id="radio2" class="radio-radio" name="radio-price"> High - Low</label>
+                            </div>
+
+                        </div> 
+                        <div id="section1" class="section">
+                            <!--TEST
+                                <div class="own-merch" class="merch-hover">
+                                    <div class="image-container"><img src="Images/Ficus.jpeg" class="items-image"></div>
+                                    <p class="title">Ficus</p>
+                                    <p class="prience">Pret: 349,99 lei</p>
+                                    <div class="buy-container"><button class="buy">BUY</button></div><br>
+                                    <div class="buy-container"><button class="remove">Remove</button></div>
+                                                        </div>-->
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        <section id="games" class="hidden">
+        <!--Section 2-->
+    <br>
+    <div class="principal-important-section">
+        <div id="principalsection2" class="principalsection">
+            <div class="principal-title"><p>Games:</p></div>
+            <!--
+            <div id="section2" class="section">
+
+               <div id="text-minigame">
+                    <p id="minigame-title">Noul Joc</p>
+                    <p id="minigame-subtitle">Rock - Paper - Scissor</p>
+
+                    <p id="click-here-indications">Am creat un nou joc pe care multi il stiti. Nu are nicio legatura cu site-ul/magazinul,
+                        dar sectiunea aceasta, Minigames, este mai interesanta.</p>
+                    
+                    <a href="Game1/Game1.html"  id="click-here-button">Click Aici</a>
+               </div>
+
+               <img src="Images/foarfecaa.png" id="image-container-minigame">
+                
+
+               
+               <div id="text-minigame">
+                    <p id="minigame-title">Noul Joc Soon</p>
+                    <p id="minigame-subtitle">Soon</p>
+
+                    <p id="click-here-indications">Soon.</p>
+                    
+                    <a href=""  id="click-here-button">Soon</a>
+               </div>
+
+               <img src="Images/soon2.jpeg" id="image-container-minigame">
+-->
+               <div id="section2" class="section">
+
+                    <div class="gamess">
+                        <div class="img-container"><img src="Images/foarfecaa.png" class="game-img"></div>
+                        <div class="text-container">
+
+                            <p id="minigame-subtitle">Rock - Paper - Scissor</p>
+
+                            <p id="click-here-indications">Jocul din copilarie este aici.</p>
+                    
+                            <a href="Game1/Game1.html"  id="click-here-button">Click Aici</a>
+                        </div>
+                    </div>
+
+                    <div class="gamess">
+                        <div class="img-container"><img src="Images/questionMark2.webp" class="game-img" id="game-img2"></div>
+                        <div class="text-container">
+
+                            <p id="minigame-subtitle">Guessing Number</p>
+
+                            <p id="click-here-indications">Trebuie sa gasesti numarul pe care il gandeste calculatorul!</p>
+                    
+                            <a href="Game2/Game2.html"  id="click-here-button">Click Aici</a>
+                        </div></div>
+                            
+                        </div>
+                    </div>
+               </div>
+                  
+</section>
+
+
+    <section id="list" class="hidden">
+    <!--Section 3-->
+    <div class="principal-important-section">
+        <div id="principalsection2" class="principalsection">
+            <div class="principal-title"><p>To Do List:</p></div>
+            <div id="section2" class="section">
+                <!--Content-->
+
+                <div id="todo-container">
+                    <p id="todo-title">To-Do List</p>
+                    <p id="todo-text">Am creat o nouă secțiune dedicată în care îți poți organiza eficient activitățile 
+                        zilnice printr-o listă personalizată de tip To-Do List, astfel încât să-ți gestionezi mai ușor 
+                        sarcinile și să rămâi mereu productiv!</p>
+                    
+                    <a href="List/List.ePlants.html" id="click-here-button2">Click Aici</a>
+                </div>               
+            </div>
+        </div>
+    </div> 
+</section>    
+    
+
+    <section  class="hidden">
+        <!--Section 4-->
+        <br>
+        <div class="principal-important-section">
+            <div id="principalsection2" class="principalsection">
+                <div class="principal-title"><p>Creaza produs:</p></div>
+                <div id="section2" class="section">
+    
+                    <!--Own Art Test-->
+                    <div id="own-merch" class="merch-STOP">
+                        <p class="title">Creaza un produs nou:</p>
+                        <div id="container-input1" class="container-input">
+                            <label for="input-title" class="label">Title:</label>
+                            <input type="text" id="input-title" class="input" placeholder="Type here">
+                        </div><br>
+                        <div id="container-input2" class="container-input">
+                            <label for="input-price" class="label">Price:</label>
+                            <input type="number" id="input-price" class="input" placeholder="Type here">
+                        </div><br>
+                        <div id="container-input3" class="container-input">
+                            <label for="input-image" class="label">Image:</label>
+                            <input type="file" id="input-image" class="input">
+                        </div><br><br>
+                        <div class="buy-container"><button id="add-new" class="special-buy">ADD NEW</button></div>
+                    </div>
+
+                    <!--Steps to Create-->
+
+                    <div id="all-steps-container">
+                        <div class="steps-to-create">
+                            <div class="title-step-container">
+                                <p class="step-title">Pasul 1:</p>
+                                <p class="step-content">Trebuie sa adaugi un titlu pentru produsul tau in sectiunea specificata.</p>
+                                <div class="img-step-container">
+                                    <img src="Images/StepTitle.png" class="img-step">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="steps-to-create">
+                            <div class="title-step-container">
+                                <p class="step-title">Pasul 2:</p>
+                                <p class="step-content">Trebuie sa adaugi un pret pentru produsul tau in sectiunea specificata.</p>
+                                <div class="img-step-container">
+                                    <img src="Images/StepPrice.png" class="img-step">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="steps-to-create">
+                            <div class="title-step-container">
+                                <p class="step-title">Pasul 3:</p>
+                                <p class="step-content">Poti adauga si o imagine, dar aceasta momentan va fi inlocuita cu un X. Dupa completarea spatiilor, poti crea produsul dorit!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> 
+            </div>
+        </div>
+    </div>
+
+
+<section id="contact" class="hidden">
+    <!--Section 5-->
+    <div class="principal-important-section">
+        <div id="principalsection3" class="principalsection">
+            <div class="principal-title"><p>Contacteaza-ne:</p></div>
+            <div id="section3" class="section">
+            
+                <form id="contact-container" action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <input type="hidden" name="access_key" value="3e158545-8998-4ccc-b807-5ab9f3f2f24d">
+                    
+                    <label for="name-contact" class="label-contact">Full Name:</label>
+                    <input type="text" id="name-contact" placeholder="Name" name="name"><br><br>
+
+                    <label for="email-contact" class="label-contact">Email:</label>
+                    <input type="email" id="email-contact" placeholder="Email" name="email"><br><br>
+
+                    <label for="email-contact" class="label-contact">Tel:</label>
+                    <input type="tel" id="tel-contact" placeholder="Tel" name="tel"><p id="optional">Optional*</p><br><br>
+
+                    <label for="name-contact" class="label-contact">Scrie-ne:</label><br>
+                    <textarea type="search" id="text-contact" placeholder="Scrie aici:" name="message"></textarea><br><br>
+
+                    <button id="submit">Trimite</button>
+                
+                </form>
+            
+            </div>
+         </div>
+    </div>
+</section> 
+    
+</main>
+</body>
+    <!--Footer-->
+    <footer  class="hidden">  
+    <br><br><br>
+    <div id="footer-container">
+        <p id="footer-text">
+            &copy; 2025 Toate drepturile rezervate | Website realizat de ×꧁♤Mihคi♤꧂×
+        </p>
+    </div>
+    </footer>
+    
+    <script src="List/action.js"></script>
+    <script src="darkmode.js"></script>
+    <script src="action.js"></script>
+    <script defer src="animation.js"></script>
+</body>
+</html>
